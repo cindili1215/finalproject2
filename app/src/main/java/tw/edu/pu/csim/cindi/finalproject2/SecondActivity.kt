@@ -69,7 +69,13 @@ fun ColorQuizScreen() {
     val colorNames = listOf("紅色", "藍色", "黑色", "綠色", "黃色", "白色")
     val correctColorName = getColorName(currentColor)
 
-    Column {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color.LightGray),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
         Button(
             onClick = {
                 activity.finish()
