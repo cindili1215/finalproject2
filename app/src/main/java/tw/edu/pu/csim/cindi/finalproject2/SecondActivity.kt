@@ -96,7 +96,7 @@ fun ColorQuizScreen() {
         ) {
             Box(
                 modifier = Modifier
-                    .size(100.dp)
+                    .size(150.dp)
                     .background(currentColor)
             )
 
