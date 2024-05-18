@@ -125,11 +125,15 @@ fun ColorQuizScreen() {
 }
 
 fun generateRandomColor(): Color {
-    return Color(
-        red = Random.nextFloat(),
-        green = Random.nextFloat(),
-        blue = Random.nextFloat()
+    val colors = listOf(
+        Color(1.0f, 0.0f, 0.0f), // 紅色
+        Color(0.0f, 0.0f, 1.0f), // 藍色
+        Color(1.0f, 1.0f, 1.0f), // 白色
+        Color(0.0f, 0.0f, 0.0f), // 黑色
+        Color(0.0f, 1.0f, 0.0f), // 綠色
+        Color(1.0f, 1.0f, 0.0f)  // 黃色
     )
+    return colors.random()
 }
 
 fun getColorName(color: Color): String {
