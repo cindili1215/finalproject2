@@ -111,7 +111,7 @@ fun Main() {
                     expanded = showMenu, onDismissRequest = { showMenu = false }
                 ) {
                     DropdownMenuItem(
-                        text = { Text("背景音.1") },
+                        text = { Text("背景音1") },
                         onClick = {
                             val navController = null
                             navController.setValue("JumpFirst")
