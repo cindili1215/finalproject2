@@ -119,7 +119,7 @@ fun ColorQuizScreen() {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(text = "Score: $score")
+            Text(text = "得分: $score")
         }
     }
 }
