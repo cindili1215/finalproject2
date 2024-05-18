@@ -69,6 +69,20 @@ fun FirstScreen() {
         )
 
         Button(onClick = {
+            var it = Intent(context, ThirdActivity::class.java)
+            context.startActivity(it)
+        }, colors = buttonColors(Color.DarkGray))
+        {
+            Text(text = "介紹")
+            Image(
+                painterResource(id = R.drawable.red),
+                contentDescription ="button icon",
+                modifier = Modifier.size(20.dp)
+            )
+
+        }
+
+        Button(onClick = {
             var it = Intent(context, SecondActivity::class.java)
             context.startActivity(it)
         }, colors = buttonColors(Color.DarkGray))
