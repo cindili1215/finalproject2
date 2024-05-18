@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.sp
 import tw.edu.pu.csim.cindi.finalproject2.ui.theme.Finalproject2Theme
 import android.widget.Button as Button1
 
@@ -36,9 +37,19 @@ class SecondActivity : ComponentActivity() {
 
 @Composable
 fun Greeting() {
+    val context = LocalContext.current
+    val activity = (context as Activity)
     Column {
+        Button(
+            onClick = {
+                activity.finish()
+            })
+        {
+            Text(text = "回到主頁")
+        }
         Text(
-            text = "歡迎來到顏色測驗區"
+            text = "歡迎來到顏色測驗區",
+            fontSize = 35.sp,
         )
     }
 }
