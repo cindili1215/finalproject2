@@ -124,54 +124,6 @@ fun ColorQuizScreen() {
     }
 }
 
-
-
-/*@Composable
-fun ColorQuizScreen() {
-    val context = LocalContext.current
-    var currentColor by remember { mutableStateOf(generateRandomColor()) }
-    var score by remember { mutableStateOf(0) }
-    val colorNames = listOf("Red", "Green", "Blue", "Yellow", "Cyan", "Magenta", "Black", "White")
-    val correctColorName = getColorName(currentColor)
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Box(
-            modifier = Modifier
-                .size(100.dp)
-                .background(currentColor)
-        )
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Text(text = "Select the color name:")
-
-        colorNames.forEach { colorName ->
-            Spacer(modifier = Modifier.height(8.dp))
-            Button(onClick = {
-                if (colorName == correctColorName) {
-                    score++
-                    Toast.makeText(context, "Correct!", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(context, "Wrong! It was $correctColorName", Toast.LENGTH_SHORT).show()
-                }
-                currentColor = generateRandomColor()
-            }) {
-                Text(text = colorName)
-            }
-        }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Text(text = "Score: $score")
-    }
-}*/
-
 fun generateRandomColor(): Color {
     return Color(
         red = Random.nextFloat(),
