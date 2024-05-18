@@ -123,7 +123,6 @@ fun ColorQuizScreen() {
         }
     }
 }
-
 fun generateRandomColor(): Color {
     val colors = listOf(
         Color(1.0f, 0.0f, 0.0f), // 紅色

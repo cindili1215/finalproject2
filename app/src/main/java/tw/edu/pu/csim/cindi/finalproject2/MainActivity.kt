@@ -63,6 +63,11 @@ fun FirstScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
+        Image(
+            painter = painterResource(id = R.drawable.watercolor),
+            contentDescription = "水彩盤"
+        )
+
         Button(onClick = {
             var it = Intent(context, SecondActivity::class.java)
             context.startActivity(it)
