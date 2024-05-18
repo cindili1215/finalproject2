@@ -51,7 +51,7 @@ class SecondActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting()
+                    //Greeting()
                     ColorQuizScreen()
 
                 }
@@ -61,9 +61,14 @@ class SecondActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting() {
+fun ColorQuizScreen() {
     val context = LocalContext.current
     val activity = (context as Activity)
+    var currentColor by remember { mutableStateOf(generateRandomColor()) }
+    var score by remember { mutableStateOf(0) }
+    val colorNames = listOf("Red", "Green", "Blue", "Yellow", "Cyan", "Magenta", "Black", "White")
+    val correctColorName = getColorName(currentColor)
+
     Column {
         Button(
             onClick = {
@@ -76,54 +81,46 @@ fun Greeting() {
             text = "歡迎來到顏色測驗區",
             fontSize = 35.sp,
         )
-    }
-}
-
-
-
-@Composable
-fun ColorQuizScreen() {
-    val context = LocalContext.current
-    var currentColor by remember { mutableStateOf(generateRandomColor()) }
-    var score by remember { mutableStateOf(0) }
-    val colorNames = listOf("Red", "Green", "Blue", "Yellow", "Cyan", "Magenta", "Black", "White")
-    val correctColorName = getColorName(currentColor)
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(16.dp),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Box(
+        Column(
             modifier = Modifier
-                .size(100.dp)
-                .background(currentColor)
-        )
+                .fillMaxSize()
+                .padding(16.dp),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(100.dp)
+                    .background(currentColor)
+            )
 
-        Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(16.dp))
 
-        Text(text = "Select the color name:")
+            Text(text = "Select the color name:")
 
-        colorNames.forEach { colorName ->
-            Spacer(modifier = Modifier.height(8.dp))
-            Button(onClick = {
-                if (colorName == correctColorName) {
-                    score++
-                    Toast.makeText(context, "Correct!", Toast.LENGTH_SHORT).show()
-                } else {
-                    Toast.makeText(context, "Wrong! It was $correctColorName", Toast.LENGTH_SHORT).show()
+            colorNames.forEach { colorName ->
+                Spacer(modifier = Modifier.height(8.dp))
+                Button(onClick = {
+                    if (colorName == correctColorName) {
+                        score++
+                        Toast.makeText(context, "Correct!", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(
+                            context,
+                            "Wrong! It was $correctColorName",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    currentColor = generateRandomColor()
+                }) {
+                    Text(text = colorName)
                 }
-                currentColor = generateRandomColor()
-            }) {
-                Text(text = colorName)
             }
+
+            Spacer(modifier = Modifier.height(16.dp))
+
+            Text(text = "Score: $score")
         }
-
-        Spacer(modifier = Modifier.height(16.dp))
-
-        Text(text = "Score: $score")
     }
 }
 
