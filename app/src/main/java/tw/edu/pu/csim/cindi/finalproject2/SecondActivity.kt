@@ -96,18 +96,18 @@ fun ColorQuizScreen() {
 
             Spacer(modifier = Modifier.height(16.dp))
 
-            Text(text = "Select the color name:")
+            Text(text = "請選擇正確的顏色:")
 
             colorNames.forEach { colorName ->
                 Spacer(modifier = Modifier.height(8.dp))
                 Button(onClick = {
                     if (colorName == correctColorName) {
                         score++
-                        Toast.makeText(context, "Correct!", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(context, "答對了!", Toast.LENGTH_SHORT).show()
                     } else {
                         Toast.makeText(
                             context,
-                            "Wrong! It was $correctColorName",
+                            "錯誤! 這是 $correctColorName",
                             Toast.LENGTH_SHORT
                         ).show()
                     }
