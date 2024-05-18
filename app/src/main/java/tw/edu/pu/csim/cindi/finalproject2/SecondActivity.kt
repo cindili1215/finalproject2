@@ -66,7 +66,7 @@ fun ColorQuizScreen() {
     val activity = (context as Activity)
     var currentColor by remember { mutableStateOf(generateRandomColor()) }
     var score by remember { mutableStateOf(0) }
-    val colorNames = listOf("Red", "Green", "Blue", "Yellow", "Cyan", "Magenta", "Black", "White")
+    val colorNames = listOf("紅色", "綠色", "藍色", "黃色", "青色", "品紅色", "黑色", "白色")
     val correctColorName = getColorName(currentColor)
 
     Column {
@@ -134,14 +134,14 @@ fun generateRandomColor(): Color {
 
 fun getColorName(color: Color): String {
     return when {
-        color.red > 0.5f && color.green < 0.5f && color.blue < 0.5f -> "Red"
-        color.red < 0.5f && color.green > 0.5f && color.blue < 0.5f -> "Green"
-        color.red < 0.5f && color.green < 0.5f && color.blue > 0.5f -> "Blue"
-        color.red > 0.5f && color.green > 0.5f && color.blue < 0.5f -> "Yellow"
-        color.red < 0.5f && color.green > 0.5f && color.blue > 0.5f -> "Cyan"
-        color.red > 0.5f && color.green < 0.5f && color.blue > 0.5f -> "Magenta"
-        color.red < 0.5f && color.green < 0.5f && color.blue < 0.5f -> "Black"
-        else -> "White"
+        color.red > 0.5f && color.green < 0.5f && color.blue < 0.5f -> "紅色"
+        color.red < 0.5f && color.green > 0.5f && color.blue < 0.5f -> "綠色"
+        color.red < 0.5f && color.green < 0.5f && color.blue > 0.5f -> "藍色"
+        color.red > 0.5f && color.green > 0.5f && color.blue < 0.5f -> "黃色"
+        color.red < 0.5f && color.green > 0.5f && color.blue > 0.5f -> "青色"
+        color.red > 0.5f && color.green < 0.5f && color.blue > 0.5f -> "品紅色"
+        color.red < 0.5f && color.green < 0.5f && color.blue < 0.5f -> "黑色"
+        else -> "白色"
     }
 }
 @Preview(showBackground = true)
