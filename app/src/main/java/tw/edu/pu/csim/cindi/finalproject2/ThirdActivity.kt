@@ -56,6 +56,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             .fillMaxSize()
             .background(Color.LightGray)
     ) {
+        Button(
+            onClick = {
+                activity.finish()
+            })
+        {
+            Text(text = "回到主頁")
+        }
         // 顏色和例子
         val colorExamples = listOf(
             Triple(R.drawable.apple, "紅色", "蘋果"),
@@ -74,13 +81,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
                 modifier = modifier
             )
             Spacer(modifier = Modifier.height(16.dp))
-        }
-        Button(
-            onClick = {
-                activity.finish()
-            })
-        {
-            Text(text = "回到主頁")
         }
     }
 }
