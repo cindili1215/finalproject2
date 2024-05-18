@@ -23,7 +23,7 @@ class SecondActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    //Greeting("Android")
+                    Greeting()
                 }
             }
         }
@@ -31,7 +31,7 @@ class SecondActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting() {
     Column {
         Text(
             text = "歡迎來到顏色測驗區"
