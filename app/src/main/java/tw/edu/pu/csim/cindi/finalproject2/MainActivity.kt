@@ -2,6 +2,7 @@ package tw.edu.pu.csim.cindi.finalproject2
 
 import android.content.Intent
 import android.os.Bundle
+import android.text.style.BackgroundColorSpan
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -71,7 +72,12 @@ fun FirstScreen() {
         Button(onClick = {
             var it = Intent(context, ThirdActivity::class.java)
             context.startActivity(it)
-        }, colors = buttonColors(Color.DarkGray))
+        },
+            colors = (
+                buttonColors(Color(android.graphics.Color.parseColor("#C1B6A4"))
+                )
+            )
+        )
         {
             Text(text = "介紹")
             Image(
@@ -85,7 +91,12 @@ fun FirstScreen() {
         Button(onClick = {
             var it = Intent(context, SecondActivity::class.java)
             context.startActivity(it)
-        }, colors = buttonColors(Color.DarkGray))
+        },
+            colors = (
+                    buttonColors(Color(android.graphics.Color.parseColor("#B29079"))
+                    )
+            )
+        )
         {
             Text(text = "Start")
             Image(
