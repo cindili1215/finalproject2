@@ -6,22 +6,27 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.lazy.rememberLazyListState
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import tw.edu.pu.csim.cindi.finalproject2.ui.theme.Finalproject2Theme
@@ -61,7 +66,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         {
             Text(text = "回到主頁")
         }
-
+        // 顏色和例子
         val colorExamples = listOf(
             Triple(R.drawable.apple, "紅色", "蘋果"),
             Triple(R.drawable.blueberry, "藍色", "藍莓"),
@@ -71,20 +76,14 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             Triple(R.drawable.bear, "黑色", "黑熊")
         )
 
-        LazyColumn(
-            modifier = Modifier.fillMaxSize(),
-            contentPadding = PaddingValues(8.dp),
-            verticalArrangement = Arrangement.spacedBy(16.dp),
-            state = rememberLazyListState()
-        ) {
-            items(colorExamples) { (imageRes, colorText, exampleText) ->
-                ColorRow(
-                    imageRes = imageRes,
-                    colorText = colorText,
-                    exampleText = exampleText,
-                    modifier = modifier
-                )
-            }
+        colorExamples.forEach { (imageRes, colorText, exampleText) ->
+            ColorRow(
+                imageRes = imageRes,
+                colorText = colorText,
+                exampleText = exampleText,
+                modifier = modifier
+            )
+            Spacer(modifier = Modifier.height(16.dp))
         }
     }
 }
@@ -104,7 +103,7 @@ fun ColorRow(imageRes: Int, colorText: String, exampleText: String, modifier: Mo
             alpha = 0.7f,
             modifier = Modifier
                 .background(Color.DarkGray)
-                .size(100.dp)
+                .size(100.dp) // 設置圖片大小
         )
         Spacer(modifier = Modifier.width(16.dp))
         Text(
