@@ -72,8 +72,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         )
 
         LazyColumn(
-            modifier = Modifier
-                .fillMaxSize(),
+            modifier = Modifier.fillMaxSize(),
             contentPadding = PaddingValues(8.dp),
             verticalArrangement = Arrangement.spacedBy(16.dp),
             state = rememberLazyListState()
