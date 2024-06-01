@@ -19,6 +19,8 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.rounded.AccountBox
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -48,8 +50,10 @@ class SecondActivity : ComponentActivity() {
             Finalproject2Theme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color(android.graphics.Color.parseColor("#EFE7DA"))),
+                    //color = MaterialTheme.colorScheme.background
                     //color = Color(android.graphics.Color.parseColor("#FFA500"))
                 ) {
                     //Greeting()
@@ -73,15 +77,16 @@ fun ColorQuizScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.LightGray),
+            .background(Color(android.graphics.Color.parseColor("#EFE7DA"))),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
             onClick = {
                 activity.finish()
-            })
-        {
+            },
+            colors = buttonColors(Color(android.graphics.Color.parseColor("#B29079")))
+        ){
             Text(text = "回到主頁")
         }
         Text(

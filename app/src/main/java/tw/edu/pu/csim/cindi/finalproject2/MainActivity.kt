@@ -41,8 +41,10 @@ class MainActivity : ComponentActivity() {
             Finalproject2Theme {
                 // A surface container using the 'background' color from the theme
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
+                    modifier = Modifier
+                        .fillMaxSize()
+                        .background(Color(android.graphics.Color.parseColor("#EFE7DA"))),
+                    //color = MaterialTheme.colorScheme.background
                 ) {
                     //Greeting("Android")
                     FirstScreen()
@@ -74,8 +76,7 @@ fun FirstScreen() {
             context.startActivity(it)
         },
             colors = (
-                buttonColors(Color(android.graphics.Color.parseColor("#B29079"))
-                )
+                buttonColors(Color(android.graphics.Color.parseColor("#B29079")))
             )
         )
         {

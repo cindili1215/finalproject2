@@ -16,6 +16,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -54,12 +55,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.LightGray)
+            .background(Color(android.graphics.Color.parseColor("#EFE7DA"))),
     ) {
         Button(
             onClick = {
                 activity.finish()
-            })
+            },
+            colors = buttonColors(Color(android.graphics.Color.parseColor("#B29079"))))
         {
             Text(text = "回到主頁")
         }
