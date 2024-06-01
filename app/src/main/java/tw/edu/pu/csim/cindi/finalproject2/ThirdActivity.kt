@@ -51,6 +51,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         modifier = Modifier
             .fillMaxSize()
             .background(Color(android.graphics.Color.parseColor("#EFE7DA"))),
+
     ) {
         Button(
             onClick = {
