@@ -136,7 +136,7 @@ fun Main() {
             },
             actions = {
                 IconButton(
-                    onClick = { Toast.makeText(context, "作者：米納桑", Toast.LENGTH_SHORT).show() }
+                    onClick = { Toast.makeText(context, "作者：李欣諦,蔡譯嫺,謝棨亘,李盈蓁", Toast.LENGTH_SHORT).show() }
                 ) {
                     Icon(Icons.Rounded.AccountBox, contentDescription = "Author")
                 }
