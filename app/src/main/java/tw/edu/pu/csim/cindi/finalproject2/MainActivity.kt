@@ -66,9 +66,14 @@ fun FirstScreen() {
         horizontalAlignment = Alignment.CenterHorizontally
     )
     {
-        Image(
+        /*Image(
             painter = painterResource(id = R.drawable.watercolor),
             contentDescription = "水彩盤"
+        )*/
+
+        Image(
+            painter = painterResource(id = R.drawable.logo),
+            contentDescription = "摟狗"
         )
 
         Button(onClick = {
