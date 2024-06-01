@@ -108,7 +108,7 @@ fun ColorQuizScreen() {
                     modifier = Modifier.size(180.dp, 60.dp) // Set button size here
                 ) {
                     Text(text = colorName,
-                        fontSize = 20.sp // Set button text size here
+                        fontSize = 30.sp // Set button text size here
                         )
                 }
             }
