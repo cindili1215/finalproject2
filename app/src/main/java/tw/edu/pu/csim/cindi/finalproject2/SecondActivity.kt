@@ -8,6 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
+import androidx.compose.material3.ButtonDefaults.buttonColors
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -46,7 +47,7 @@ fun ColorQuizScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Gray), // Set the background color here
+            .background(Color(android.graphics.Color.parseColor("#EFE7DA"))), // Set the background color here
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -54,9 +55,7 @@ fun ColorQuizScreen() {
             onClick = {
                 activity.finish()
             },
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color.Blue,
-                contentColor = Color.White
+            colors = buttonColors(Color(android.graphics.Color.parseColor("#B29079"))
             ),
             modifier = Modifier.size(150.dp, 50.dp) // Set button size here
         ) {
