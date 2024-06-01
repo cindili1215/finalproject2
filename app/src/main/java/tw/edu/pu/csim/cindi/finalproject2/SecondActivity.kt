@@ -50,6 +50,7 @@ class SecondActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
+                    //color = Color(android.graphics.Color.parseColor("#FFA500"))
                 ) {
                     //Greeting()
                     ColorQuizScreen()

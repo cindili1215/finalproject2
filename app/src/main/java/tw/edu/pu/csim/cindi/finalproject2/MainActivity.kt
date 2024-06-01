@@ -58,7 +58,7 @@ fun FirstScreen() {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.LightGray),
+            .background(Color(android.graphics.Color.parseColor("#EFE7DA"))),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     )
@@ -106,7 +106,7 @@ fun Main() {
 
     Column {
         TopAppBar(
-            title = { Text(text = "APP名") },
+            title = { Text(text = "咖樂") },
 
             navigationIcon = {
                 IconButton(onClick = {
@@ -122,8 +122,6 @@ fun Main() {
                     Icon(Icons.Rounded.AccountBox, contentDescription = "Author")
                 }
             }
-
-
         )
     }
 }
