@@ -74,7 +74,7 @@ fun FirstScreen() {
             context.startActivity(it)
         },
             colors = (
-                buttonColors(Color(android.graphics.Color.parseColor("#C1B6A4"))
+                buttonColors(Color(android.graphics.Color.parseColor("#B29079"))
                 )
             )
         )
